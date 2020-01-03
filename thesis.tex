@@ -1,4 +1,44 @@
+\documentclass{foefyp}
 
+\usepackage{lipsum}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
+% TODO: edit to fit your own .bib file here
+\addbibresource{cjason.bib}
+
+\author{Chia Jason}
+\title{Design and Analysis for an Identity-Based Identification Scheme with Tight Security}
+\submissionyear{2020}
+\submissionmonth{January}
+\faculty{Faculty of Engineering}
+\degree{Bachelor of Engineering (Hons) Electronics majoring in Computer}
+
+\begin{document}
 
 % ========================================================================== TJ Line
+
+\frontmatter
+\copyrightpage
+
+% TODO: fix your list of abbreviations
+{\clearpage\SingleSpacing
+\tableofcontents\clearpage
+\listoftables\clearpage
+\listoffigures\clearpage
+\chapter{List of Abbreviations}
+IBI\quad\quad Identity-Based Identification
+\clearpage
+}
+
+\mainmatter
+
+\include{intro}
+\include{literev}
+
+\backmatter
+
+\printbibliography[title=REFERENCES,heading=bibintoc]
+\end{document}
 
