@@ -12,17 +12,10 @@
 %% Ms/Dr. Lim Lian Tze's MMU PostGrad Thesis
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{mmuthesis}[LaTeX2e class for MMU FoE FYP Thesis v1.0. Copyright (c) 2020 Chia Jason and Chai Yee Ting (chia_jason96@live.com)]
+\ProvidesClass{mmuthesis}[LaTeX2e class for MMU FoE FYP Thesis v1.0. Copyright (c) 2020 Chia Jason and Chai Yee Ting (chia\_jason96@live.com)]
 
 \LoadClass[12pt,a4paper,oneside]{memoir}
 \RequirePackage{textcomp}
-
-\newcommand{\submissionyear}[1]{\def\@mtsubmissionyear{#1}}
-\newcommand{\submissionmonth}[1]{\def\@mtsubmissionmonth{#1}}
-\newcommand{\faculty}[1]{\def\@mtfaculty{#1}}
-\newcommand{\degree}[1]{\def\@mtdegree{#1}}
-\newcommand{\studentID}[1]{\def\@mtsid{#1}}
-\newcommand{\declareDate}[1]{\def\@mtddate{#1}}
 
 %%%%%%%%%%%%
 % Page layout
@@ -115,15 +108,104 @@
 \newcommand\mychap[1]{\orichapter[\texorpdfstring{\MakeUppercase{#1}}{#1}]{#1}}
 \newcommand\mystarchap[1]{\orichapter*{#1}}
 
+%%%%%%%%%%%%
+% Chapter headings (Edited 3 Jan 2020) Chia Jason
+%%%%%%%%%%%%
+% Define fronmatter chapter style (heading centered
+\makechapterstyle{frontmatter}{
+	\renewcommand\chapterheadstart{\normalsize\vskip\beforechapskip}
+	\setlength\beforechapskip{0pt}
+	%\setlength\midchapskip{2\onelineskip}
+	\setlength\midchapskip{\onelineskip}
+	\setlength\afterchapskip{2\onelineskip minus \onelineskip}
+	%\setlength\afterchapskip{\onelineskip}
+	\renewcommand*\chapnamefont{\normalsize\bfseries}
+	\renewcommand*\chapnumfont{\normalsize\bfseries\centering}
+	\renewcommand*\chaptitlefont{\normalsize\bfseries\centering}
+	\renewcommand{\printchaptername}{{\chapnamefont\MakeUppercase{\chaptername}}}
+	%\renewcommand*{\afterchapternum}{\vskip\midchapskip}
+	\renewcommand*{\afterchapternum}{\qquad}
+	\renewcommand*{\printchaptertitle}[1]{{\chaptitlefont\MakeUppercase{##1}\par}}
+}
+% Define main matter, heading flushed left
+\makechapterstyle{mainmatter}{
+	\renewcommand\chapterheadstart{\normalsize\vskip\beforechapskip}
+	\setlength\beforechapskip{0pt}
+	%\setlength\midchapskip{2\onelineskip}
+	\setlength\midchapskip{\onelineskip}
+	\setlength\afterchapskip{2\onelineskip minus \onelineskip}
+	%\setlength\afterchapskip{\onelineskip}
+	\renewcommand*\chapnamefont{\normalsize\bfseries}
+	\renewcommand*\chapnumfont{\normalsize\bfseries}
+	\renewcommand*\chaptitlefont{\normalsize\bfseries}
+	\renewcommand{\printchaptername}{{\chapnamefont\MakeUppercase{\chaptername}}}
+	%\renewcommand*{\afterchapternum}{\vskip\midchapskip}
+	\renewcommand*{\afterchapternum}{\qquad}
+	\renewcommand*{\printchaptertitle}[1]{{\chaptitlefont\MakeUppercase{##1}\par}}
+}
+\let\oldfrontmatter\frontmatter
+\renewcommand{\frontmatter}{\chapterstyle{frontmatter}\oldfrontmatter}
+\let\oldmainmatter\mainmatter
+\renewcommand{\mainmatter}{\chapterstyle{mainmatter}\oldmainmatter}
+\let\oldbackmatter\backmatter
+\renewcommand{\backmatter}{\chapterstyle{backmatter}\oldbackmatter}
+
 % TOC, LOF, LOT heading defines
 \renewcommand*\contentsname{\texorpdfstring{TABLE OF CONTENTS}{Table of Contents}}
 \renewcommand*\listtablename{\texorpdfstring{LIST OF TABLES}{List of Tables}}
 \renewcommand*\listfigurename{\texorpdfstring{LIST OF FIGURES}{List of Figures}}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% LESS EDIT BEYOND THIS LINE %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%
 % The Copyright page
 %%%%%%%%%%%%
+
+% Housekeeping stuff
+\def\theauthor{\textbf{!INSERT AUTHOR!}}
+\def\thetitle{\textbf{!INSERT TITLE!}}
+\def\@mtsubmissionmonth{\textbf{!INSERT MONTH!}}
+\def\@mtsubmissionyear{\textbf{!INSERT YEAR!}}
+\def\@mtfaculty{\textbf{!INSERT FACULTY!}}
+\def\@mtdegree{\textbf{!INSERT DEGREE!}}
+\def\@mtsid{\textbf{!INSERT STUDENT ID!}}
+\def\@mtdate{\textbf{!INSERT DECLARATION DATE!}}
+
+% Housekeeping
+\newcommand{\submissionyear}[1]{\def\@mtsubmissionyear{#1}}
+\newcommand{\submissionmonth}[1]{\def\@mtsubmissionmonth{#1}}
+\newcommand{\faculty}[1]{\def\@mtfaculty{#1}}
+\newcommand{\degree}[1]{\def\@mtdegree{#1}}
+\newcommand{\studentID}[1]{\def\@mtsid{#1}}
+\newcommand{\declareDate}[1]{\def\@mtddate{#1}}
+
+%%%%%%%%%%%%
+% Sectional headings
+%%%%%%%%%%%%
+\setsecnumdepth{subsubsection}
+\setsecheadstyle{\normalsize\bfseries}
+%\setbeforesecskip{2.5ex plus 1ex minus .2ex}
+\setbeforesecskip{\onelineskip}
+%\setaftersecskip{0.1ex plus .2ex}
+%\setaftersecskip{1em plus .2ex minus .2ex}
+\setaftersecskip{\onelineskip}
+\setsubsecheadstyle{\normalsize\bfseries}
+%\setbeforesubsecskip{2.5ex plus .1ex minus .2ex}
+\setbeforesubsecskip{\onelineskip}
+%\setaftersubsecskip{0.1ex plus .2ex}
+%\setaftersubsecskip{1em plus .2ex minus .2ex}
+\setaftersubsecskip{\onelineskip}
+\setsubsubsecheadstyle{\normalsize\itshape}
+%\setbeforesubsubsecskip{1.5ex plus 1ex minus .2ex}
+\setbeforesubsubsecskip{\onelineskip}
+\renewcommand\thesubsubsection{\thesubsection\space(\alph{subsubsection})}
+\setsubsubsecheadstyle{\normalsize\itshape}
+%\setbeforesubsubsecskip{2.5ex plus .2ex minus .2ex}
+\setbeforesubsubsecskip{\onelineskip}
+%\setaftersubsubsecskip{0.1ex plus .2ex}
+%\setaftersubsubsecskip{1em plus .1ex minus .2ex}
+\setaftersubsubsecskip{\onelineskip}
+
 \newcommand{\copyrightpage}{\hspace{1em}%
 \phantomsection%
 \ifpdf\pdfbookmark{Copyright Page}{copyright}\fi%
@@ -176,6 +258,7 @@ Copyright of this report belongs to Universiti Telekom Sdn. Bhd. as qualified by
 %%%%%%%%%%%%
 \newcommand{\makecoverandtitlepage}{%
 \ignorespaces
+\changepage{-40mm}{-15mm}{15mm}{0em}{0em}{40mm}{0em}{0em}{0em}
 
 %\changepage{-40mm}{-15mm}{15mm}{0em}{0em}{40mm}{0em}{0em}{0em}
 %\begin{titlingpage}

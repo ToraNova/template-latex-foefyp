@@ -5,6 +5,17 @@
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{enumitem}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{multirow}% http://ctan.org/pkg/multirow
+\usepackage{tabu}
+
+% define Definition, Lemma, Theorem, Proof notation
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proof}{Proof}
+% Macro list cuz im lazy to retype this
+\newcommand\code[1]{$\texttt{#1}$}
 
 \usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
 % TODO: edit to fit your own .bib file here
@@ -22,13 +33,13 @@
 
 \begin{document}
 
-% ========================================================================== TJ Line
-
 \frontmatter
 \makecoverandtitlepage
 \copyrightpage
 \declarationpage
+
 \acknowledgements{Thanks piky. Pikyworm loves you and xiang yi wei ming forever.}
+
 \abstractfromfile{abstract}
 
 % TODO: fix your list of abbreviations
