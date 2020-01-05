@@ -132,9 +132,11 @@
 	\renewcommand\chapterheadstart{\normalsize\vskip\beforechapskip}
 	\setlength\beforechapskip{0pt}
 	%\setlength\midchapskip{2\onelineskip}
-	\setlength\midchapskip{\onelineskip}
-	\setlength\afterchapskip{2\onelineskip minus \onelineskip}
+	%\setlength\midchapskip{\onelineskip}
+	%\setlength\midchapskip{0pt}
+	%\setlength\afterchapskip{2\onelineskip minus \onelineskip}
 	%\setlength\afterchapskip{\onelineskip}
+	\setlength\afterchapskip{0pt}
 	\renewcommand*\chapnamefont{\normalsize\bfseries}
 	\renewcommand*\chapnumfont{\normalsize\bfseries}
 	\renewcommand*\chaptitlefont{\normalsize\bfseries}
