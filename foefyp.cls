@@ -215,6 +215,10 @@
 %\cftaddtitleline{toc}{chapter}{COPYRIGHT PAGE}{\thepage}%
 \begin{vplace}[1]
 \fontsize{12pt}{12pt}\selectfont %The copyright of this thesis belongs to the author under the terms of the Copyright Act 1987 as qualified by Regulation 4(1) of the Multimedia University Intellectual Property Regulations. Due acknowledgement shall always be made of the use of any material contained in, or derived from, this thesis.\par\vskip\onelineskip%
+
+\setstretch{1.5}
+\abnormalparskip{1.5\onelineskip}
+\setlength\parindent{12.7mm}
 %{\raggedleft%
 %\begin{tabular}{@{}r@{ }l@{}}
 %\textcopyright & \theauthor, \@mtsubmissionyear\\
