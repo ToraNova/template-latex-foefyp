@@ -8,8 +8,9 @@
 %% Faculty of Engineering 2019/20
 %% maintainer: Chia Jason (chia_jason96@live.com)
 %%
-%% This work is Strongly inspired and guided by
+%% This work is strongly inspired and guided by
 %% Ms/Dr. Lim Lian Tze's MMU PostGrad Thesis
+%% https://www.overleaf.com/latex/templates/multimedia-university-thesis-template/tjnqkdxhbpwd
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{mmuthesis}[LaTeX2e class for MMU FoE FYP Thesis v1.0. Copyright (c) 2020 Chia Jason and Chai Yee Ting (chia\_jason96@live.com)]
